@@ -1,0 +1,52 @@
+{
+    "name": "kevsuarez/livewire-notiflix",
+    "description": "Notiflix Wrapper for Livewire",
+    "keywords": [
+        "kevsuarez",
+        "livewire-notiflix"
+    ],
+    "homepage": "https://github.com/kevsuarez/livewire-notiflix",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Suárez",
+            "email": "kevsuarezc@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "livewire/livewire": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0|^6.0",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kevsuarez\\LivewireNotiflix\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kevsuarez\\LivewireNotiflix\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "\"./vendor/bin/phpunit\"",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kevsuarez\\LivewireNotiflix\\LivewireNotiflixServiceProvider"
+            ]
+        }
+    }
+}
