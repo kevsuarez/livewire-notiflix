@@ -98,7 +98,7 @@ Insert [**notiflix**](https://www.notiflix.com) and livewire notiflix scripts di
 public function triggerNotify()
 {
     $type        = 'success';
-    $message     = 'Thanks! for use livewire notiflix';
+    $message     = 'Hello World!';
     $options     = [];
     $useCallback = false;
 
@@ -115,7 +115,7 @@ public function onNotifyClick()
 {
     $this->notify(
         'success',
-        'Thanks! for choose Livewire Notiflix.'
+        'Thanks! consider giving it a star on github.',
     );
 }
 ```
@@ -129,13 +129,13 @@ protected $listeners = [
 ];
 ```
 
-Finally, create an action method that triggers the notify alert with onNotifyClick callback pointed to the event listeners you registered. 
+Finally, create an action method that triggers the notify box with onNotifyClick callback pointed to the event listeners you registered. 
 
 ```php
 public function triggerNotify()
 {
-    $type        = 'success';
-    $message     = 'Message text';
+    $type        = 'info';
+    $message     = 'Click Me';
     $options     = [];
     $useCallback = true;
 
@@ -184,8 +184,8 @@ public function triggerNotify()
 public function triggerAlert()
 {
     $type        = 'success';
-    $title       = 'Title text';
-    $message     = 'Message text';
+    $title       = 'Success!';
+    $message     = 'Place you success message here!';
     $buttonText  = 'Okay';
     $options     = [];
     $useCallback = false;
@@ -201,9 +201,10 @@ First, setup your action method for onAlertClick callback. Of course you can nam
 ```php
 public function onAlertClick()
 {
-    $this->notify(
+    $this->alert(
         'success',
-        'Thanks! for choose Livewire Notiflix.'
+        'Good job!',
+        'You clicked the button!.'
     );
 }
 ```
@@ -217,15 +218,15 @@ protected $listeners = [
 ];
 ```
 
-Finally, create an action method that triggers the notify alert with onAlertClick callback pointed to the event listeners you registered. 
+Finally, create an action method that triggers the alert box with onAlertClick callback pointed to the event listeners you registered. 
 
 ```php
 public function triggerAlert()
 {
-    $type        = 'success';
-    $title       = 'Title text';
-    $message     = 'Message text';
-    $buttonText  = 'Okay';
+    $type        = 'info';
+    $title       = 'Hi!';
+    $message     = 'Press Ok button to continue.';
+    $buttonText  = 'Ok';
     $options     = [];
     $useCallback = true;
 
@@ -263,7 +264,7 @@ public function triggerFlash()
     //Mode: notify 
     $this->flash('notify', [
         'type'        => 'success',
-        'message'     => 'Message text',
+        'message'     => 'Hello World!',
         'options'     => [],
         'useCallback' => false,
     ]);
@@ -273,8 +274,8 @@ public function triggerFlash()
     //Mode: alert
     $this->flash('alert', [
         'type'        => 'success',
-        'title'       => 'Title text',
-        'message'     => 'Message text',
+        'title'       => 'Success!',
+        'message'     => 'Place you success message here!',
         'buttonText'  => 'Okay',
         'options'     => [],
         'useCallback' => false,
@@ -317,7 +318,7 @@ First, setup your action methods for confirmed and cancelled (optional) callback
 ```php
 public function confirmed($params)
 {
-    $this->alert(
+    $this->notify(
         'success',
         'Thanks! consider giving it a star on github.'
     );
@@ -325,7 +326,7 @@ public function confirmed($params)
 
 public function cancelled()
 {
-    $this->alert(
+    $this->notify(
         'info',
         'Understood',
     );
@@ -342,15 +343,15 @@ protected $listeners = [
 ];
 ```
 
-Finally, create an action method that triggers the confirmation alert with onConfirmed and onCancelled callbacks pointed to the event listeners you registered. 
+Finally, create an action method that triggers the confirmation box with onConfirmed and onCancelled callbacks pointed to the event listeners you registered. 
 
 ```php
 public function triggerConfirm()
 {
     $title             = 'Livewire Notiflix';
     $message           = 'Do you love Livewire Notiflix?';
-    $confirmButtonText = 'Confirm';
-    $cancelButtonText  = 'Cancel';
+    $confirmButtonText = 'Yes';
+    $cancelButtonText  = 'Nope';
     $options           = [
         'onConfirmed' => 'onConfirmed',
         'onCancelled' => 'onCancelled',
@@ -393,28 +394,12 @@ public function triggerConfirm()
 
 #### Example
 
-```php
-public function triggerAsk()
-{
-    $title             = 'Livewire Notiflix';
-    $question          = 'Do you love Livewire Notiflix?';
-    $answer            = 'yes';
-    $answerButtonText  = 'Answer';
-    $cancelButtonText  = 'Cancel';
-    $options           = [];
-
-    $this->ask($title, $question, $answer, $answerButtonText, $cancelButtonText, $options);
-}
-```
-
-#### Using Callbacks
-
 First, setup your action methods for onAskConfirmed and onAskCancelled (optional) callback. Of course you can name your methods anything you want.
 
 ```php
 public function onAskConfirmed($params)
 {
-    $this->alert(
+    $this->notify(
         'success',
         'Thanks! consider giving it a star on github.'
     );
@@ -422,7 +407,7 @@ public function onAskConfirmed($params)
 
 public function onAskCancelled()
 {
-    $this->alert(
+    $this->notify(
         'info',
         'Understood',
     );
@@ -446,7 +431,7 @@ public function triggerAsk()
 {
     $title             = 'Livewire Notiflix';
     $question          = 'Do you love Livewire Notiflix?';
-    $answer            = 'yes';
+    $answer            = 'Yes';
     $answerButtonText  = 'Answer';
     $cancelButtonText  = 'Cancel';
     $options           = [
