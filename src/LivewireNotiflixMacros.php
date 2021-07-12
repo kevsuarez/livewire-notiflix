@@ -4,7 +4,6 @@ namespace Kevsuarez\LivewireNotiflix;
 
 use Str;
 use Exception;
-use ReflectionMethod;
 use Livewire\Component;
 
 class LivewireNotiflixMacros
