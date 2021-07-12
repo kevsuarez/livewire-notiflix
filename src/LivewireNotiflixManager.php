@@ -24,11 +24,11 @@ class LivewireNotiflixManager
         return implode("\n", $html);
     }
 
-    public function getNotiflixFnName($BoxType, $messageType): String
+    public function getNotiflixFnName($boxType, $messageType): String
     {
         return implode('.', [
             self::NOTIFLIX,
-            $BoxType,
+            $boxType,
             self::getNamingConventionOf(($messageType === 'error') ? 'failure': $messageType),
         ]);
     }
