@@ -4,8 +4,8 @@ namespace Kevsuarez\LivewireNotiflix;
 
 class LivewireNotiflixBladeDirectives
 {
-    public static function livewireNotiflixScripts($expression = [])
+    public static function livewireNotiflixScripts()
     {
-        return '{!! \Kevsuarez\LivewireNotiflix\LivewireNotiflix::scripts('.$expression.') !!}';
+        return '{!! \Kevsuarez\LivewireNotiflix\LivewireNotiflix::scripts() !!}';
     }
 }
